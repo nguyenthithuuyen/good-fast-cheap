@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good-fast-cheap</title>
+</head>
+<body>
+<h2> Perfect numbers like perfect men are very rare.</h2>
+<label class="switch"><h1>GOOD</h1>
+    <input type="checkbox" id="good" onclick="choose(this.id)">
+    <span class="slider round"></span>
+</label>
+<br> <br>
+<label class="switch1"><h1>CHEAP</h1>
+    <input type="checkbox" id="cheap" onclick="choose(this.id)">
+    <span class="slider1 round"></span>
+</label>
+<br> <br>
+<label class="switch2"><h1>FAST</h1>
+    <input type="checkbox" id="fast" onclick="choose(this.id)">
+    <span class="slider2 round"></span>
+</label>
+<script>
+    let first = null;
+    let last = null;
+    function choose(id) {
+        let good = document.getElementById('good');
+        let cheap = document.getElementById('cheap');
+        let fast = document.getElementById('fast');
+        switch (id) {
+            case 'good':
+                if (cheap.checked && good.checked) {
+                    fast.checked = false;
+                }
+                break;
+            case 'fast':
+                if (fast.checked && good.checked) {
+                    cheap.checked = false;
+                }
+                break;
+            case 'cheap':
+                if (cheap.checked && fast.checked) {
+                    good.checked = false;
+                }
+                break;
+
+        }
+    }
+
+</script>
+</body>
+</html>
